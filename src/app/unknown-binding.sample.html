@@ -1,0 +1,10 @@
+<!--
+  Not used as a component template (strictTemplates would fail the build).
+  Open this file in the IDE to see the plugin warning on [noSuchInput]
+  and (noSuchOutput). Known bindings should stay quiet.
+-->
+<div>
+  <app-like-box [title]="'ok'" (liked)="noop()"></app-like-box>
+  <p [appClickTracker]="'ok'" [pulseColor]="'gold'" (tracked)="noop()"></p>
+  <p [noSuchInput]="'x'" (noSuchOutput)="noop()">unknown bindings</p>
+</div>

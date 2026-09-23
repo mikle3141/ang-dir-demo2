@@ -1,0 +1,45 @@
+.page {
+  max-width: 42rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.lead,
+.hint,
+.log {
+  color: #444;
+}
+
+.hint {
+  font-size: 0.95rem;
+}
+
+.log {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+}
+
+section {
+  margin-top: 1.75rem;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+code {
+  font-size: 0.95em;
+}
+
+span[appSizeBadge] {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  cursor: pointer;
+  user-select: none;
+}

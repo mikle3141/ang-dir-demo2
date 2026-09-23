@@ -1,0 +1,51 @@
+<main class="page">
+  <h1>{{ heading }}</h1>
+  <p class="lead">
+    Ctrl+Click a binding name to jump to the <code>&#64;Input</code> /
+    <code>&#64;Output</code> field. Type after a tag name to complete
+    <code>[title]</code>, <code>(liked)</code>, <code>appClickTracker</code>.
+  </p>
+
+  <section>
+    <h2>1. Component inputs and output</h2>
+    <p class="hint">
+      <code>[title]</code> → <code>&#64;Input() title</code>;
+      <code>[caption]</code> → aliased <code>&#64;Input('caption') label</code>;
+      <code>(liked)</code> → <code>&#64;Output() liked</code>.
+    </p>
+    <app-like-box
+      [title]="'Angular plugin'"
+      [caption]="'Alias input: HTML caption, field label'"
+      (liked)="onLiked($event)">
+    </app-like-box>
+    <p class="log">{{ likeLog }}</p>
+  </section>
+
+  <section>
+    <h2>2. Directive input, extra input, output</h2>
+    <p class="hint">
+      <code>[appClickTracker]</code> should open the field, not only
+      <code>selector: '[appClickTracker]'</code>.
+      <code>[pulseColor]</code> is a second input;
+      <code>(tracked)</code> is the output.
+    </p>
+    <p [appClickTracker]="'paragraph'" [pulseColor]="'royalblue'" (tracked)="onTracked($event)">
+      Click this paragraph.
+    </p>
+    <button type="button" appClickTracker="button" pulseColor="tomato" (tracked)="onTracked($event)">
+      Or this button (plain attributes)
+    </button>
+    <p class="log">{{ trackLog }}</p>
+  </section>
+
+  <section>
+    <h2>3. Metadata inputs / outputs</h2>
+    <p class="hint">
+      Declared as <code>inputs: ['size: hostSize']</code> and
+      <code>outputs: ['resized']</code> on <code>&#64;Directive</code>.
+      Double-click the badge.
+    </p>
+    <span appSizeBadge [hostSize]="'lg'" (resized)="onResized($event)">Size badge</span>
+    <p class="log">{{ sizeLog }}</p>
+  </section>
+</main>
